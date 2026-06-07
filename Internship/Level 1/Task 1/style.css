@@ -1,0 +1,274 @@
+/*
+Responsive Sidebar Styles
+Description: CSS for a responsive sidebar with collapsible functionality on desktop
+and mobile-friendly behavior
+*/
+
+/* Reset default margins, padding, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Body styles - full height flex container with gradient background */
+body {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+/* Main sidebar styles - desktop view */
+.sidebar {
+  width: 260px;
+  background: #ffffff;
+  box-shadow: 5px 0 25px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: width 0.4s ease;
+  overflow: hidden;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* Collapsed sidebar state - reduced width */
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* Top section containing logo and toggle button */
+.top-section {
+  padding: 20px;
+}
+
+/* Logo container - flex layout for logo image and text */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+/* Logo image styling */
+.logo-img {
+  height: 32px;
+  width: auto;
+  max-width: 32px;
+}
+
+/* Transition for logo text visibility */
+.logo-text {
+  transition: opacity 0.3s ease;
+}
+
+/* Hide logo text when sidebar is collapsed */
+.sidebar.collapsed .logo-text {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Toggle button styling - transparent with centered icon */
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navigation container */
+nav {
+  margin-top: 20px;
+}
+
+/* Navigation item styling - flex layout with hover effects */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  margin: 8px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for navigation items */
+.nav-item:hover {
+  background: #eef2ff;
+  transform: translateX(5px);
+}
+
+/* Icon styling within navigation items */
+.nav-item i {
+  font-size: 18px;
+  min-width: 25px;
+  text-align: center;
+}
+
+/* Navigation text transition */
+.nav-text {
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide navigation text when sidebar is collapsed */
+.sidebar.collapsed .nav-text {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Active navigation item - highlighted with blue background */
+.active {
+  background: #6366f1;
+  color: white;
+}
+
+/* Prevent transform on active item hover */
+.active:hover {
+  transform: none;
+}
+
+/* Main content area - takes remaining space */
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Mobile responsiveness - styles for screens up to 768px */
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-radius: 0;
+    max-height: 30vh;
+    overflow-y: auto;
+    transition: max-height 0.3s ease;
+  }
+  
+  .sidebar.collapsed {
+    width: 100%;
+    max-height: 60px;
+    overflow: hidden;
+  }
+  
+  /* Ensure toggle button is visible on mobile */
+  .toggle-btn {
+    z-index: 1001;
+  }
+  
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    margin-bottom: 0;
+  }
+  
+  .logo-text {
+    opacity: 1 !important;
+    display: block;
+  }
+  
+  .nav-text {
+    opacity: 1 !important;
+    display: inline-block;
+  }
+  
+  nav {
+    margin-top: 10px;
+  }
+  
+  .nav-item {
+    margin: 5px 10px;
+    padding: 8px 10px;
+  }
+  
+  .main-content {
+    margin-top: 30vh;
+    width: 100%;
+    transition: margin-top 0.3s ease;
+  }
+  
+  .sidebar:not(.collapsed) .nav-text {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  .sidebar:not(.collapsed) .logo-text {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+/* Medium mobile screens - adjust sidebar height */
+@media screen and (max-width: 480px) {
+  .sidebar {
+    max-height: 40vh;
+  }
+  
+  .main-content {
+    margin-top: 40vh;
+  }
+  
+  .nav-item {
+    margin: 5px 5px;
+    padding: 6px 8px;
+  }
+  
+  .logo {
+    gap: 5px;
+  }
+  
+  .logo-img {
+    height: 24px;
+    max-width: 24px;
+  }
+}
+
+/* Extra small mobile - smallest screen sizes */
+@media screen and (max-width: 360px) {
+  .sidebar {
+    max-height: 45vh;
+  }
+  
+  .main-content {
+    margin-top: 45vh;
+  }
+  
+  .nav-item {
+    padding: 5px 8px;
+    font-size: 14px;
+  }
+  
+  .logo-img {
+    height: 20px;
+    max-width: 20px;
+  }
+  
+  .logo-text {
+    font-size: 18px;
+  }
+}

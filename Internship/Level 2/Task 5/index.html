@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <!-- Meta tags for character encoding and viewport settings -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus AI</title>
+  
+  <!-- Main stylesheet link -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!--------- Custom cursor ---------->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!------------ NAVBAR  ----------->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Logo section -->
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">NEXUS<span class="logo-accent">AI</span></span>
+      </a>
+      <!-- Navigation links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#cta">Contact</a></li>
+      </ul>
+      <!-- Nav actions -->
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="toggle-track">
+            <span class="toggle-sun">☀</span>
+            <span class="toggle-moon">☽</span>
+            <span class="toggle-thumb"></span>
+          </span>
+        </button>
+        <a href="#pricing" class="btn btn-nav">Get Started</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!----------- HERO SECTION ----------->
+  <section class="hero" id="hero">
+    <!------- Background elements------->
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+    </div>
+    <div class="hero-container">
+      <!-- Beta badge notification -->
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Now in Public Beta · Join 50,000+ teams</span>
+      </div>
+      <!-- Hero title with animation -->
+      <h1 class="hero-title">
+        <span class="line-wrap"><span class="line animate-line-1">The Operating</span></span>
+        <span class="line-wrap"><span class="line animate-line-2">System for <span class="title-gradient">AI Teams</span></span></span>
+      </h1>
+      <!-- Hero description/subtitle -->
+      <p class="hero-desc animate-fade-up">
+        Nexus AI orchestrates your entire intelligence stack — models, data, agents, and workflows — into one seamless command center. Ship smarter products, 10× faster.
+      </p>
+      <!-- Call-to-action buttons -->
+      <div class="hero-actions animate-fade-up delay-1">
+        <a href="#pricing" class="btn btn-primary">
+          <span>Start Free Trial</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#features" class="btn btn-ghost">
+          <span class="play-icon">▶</span>
+          Watch Demo
+        </a>
+      </div>
+      <!-- Statistics  -->
+      <div class="hero-stats animate-fade-up delay-2">
+        <div class="stat">
+          <span class="stat-num" data-count="99.9">0</span><span class="stat-unit">%</span>
+          <span class="stat-label">Uptime SLA</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="10">0</span><span class="stat-unit">×</span>
+          <span class="stat-label">Faster Shipping</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="50">0</span><span class="stat-unit">k+</span>
+          <span class="stat-label">Teams Active</span>
+        </div>
+      </div>
+    </div>
+    <!-- Scroll indicator -->
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-----------LOGOS SECTION --------- -->
+  <section class="logos-section">
+    <div class="logos-container">
+      <p class="logos-label">Trusted by teams at</p>
+      <!-- Infinite scrolling logo ticker -->
+      <div class="logos-ticker">
+        <div class="ticker-track">
+          <span class="logo-item">Stripe</span>
+          <span class="logo-item">Vercel</span>
+          <span class="logo-item">Linear</span>
+          <span class="logo-item">Figma</span>
+          <span class="logo-item">Notion</span>
+          <span class="logo-item">Arc</span>
+          <span class="logo-item">Loom</span>
+          <span class="logo-item">Retool</span>
+          <!-- duplicate for seamless loop -->
+          <span class="logo-item">Stripe</span>
+          <span class="logo-item">Vercel</span>
+          <span class="logo-item">Linear</span>
+          <span class="logo-item">Figma</span>
+          <span class="logo-item">Notion</span>
+          <span class="logo-item">Arc</span>
+          <span class="logo-item">Loom</span>
+          <span class="logo-item">Retool</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!------------ FEATURES SECTION ----------->
+  <section class="features" id="features">
+    <div class="section-container">
+      <!-- Section header with tagline, title, and description -->
+      <div class="section-header">
+        <span class="section-tag">CAPABILITIES</span>
+        <h2 class="section-title">Everything your AI team<br /><em>actually needs</em></h2>
+        <p class="section-desc">Modular, powerful, and built to scale. Each feature was designed by engineers who ship AI products daily.</p>
+      </div>
+      <!-- Features grid layout -->
+      <div class="features-grid">
+
+        <!-- Feature 1: Real-Time Model Orchestration (Large card) -->
+        <div class="feature-card feature-card--large reveal">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M14 8v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Real-Time Model Orchestration</h3>
+          <p>Route prompts intelligently across GPT-4, Claude, Gemini, and custom fine-tunes based on cost, latency, and performance — automatically.</p>
+          <!-- Visual diagram showing orchestration between models -->
+          <div class="feature-visual orchestration-visual">
+            <div class="orch-node node-main">NEXUS</div>
+            <div class="orch-lines">
+              <div class="orch-line"></div>
+              <div class="orch-line"></div>
+              <div class="orch-line"></div>
+            </div>
+            <div class="orch-models">
+              <div class="orch-model">GPT-4o</div>
+              <div class="orch-model">Claude</div>
+              <div class="orch-model">Gemini</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2: Unified Prompt Studio -->
+        <div class="feature-card reveal" style="--delay:0.1s">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="4" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M9 14h10M9 10h6M9 18h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Unified Prompt Studio</h3>
+          <p>Write, version, test, and deploy prompts with a Git-like workflow. A/B test variants and ship with confidence.</p>
+          <div class="feature-tag-list">
+            <span>Versioning</span><span>A/B Testing</span><span>CI/CD</span>
+          </div>
+        </div>
+
+        <!-- Feature 3: Live Observability -->
+        <div class="feature-card reveal" style="--delay:0.2s">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 22l4-8 4 4 4-6 4 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Live Observability</h3>
+          <p>Full-stack traces, cost analytics, latency histograms, and error monitoring — all in one real-time dashboard.</p>
+          <!-- Mini bar chart visualization -->
+          <div class="mini-chart">
+            <div class="chart-bar" style="--h:40%"></div>
+            <div class="chart-bar" style="--h:65%"></div>
+            <div class="chart-bar" style="--h:50%"></div>
+            <div class="chart-bar" style="--h:80%"></div>
+            <div class="chart-bar" style="--h:60%"></div>
+            <div class="chart-bar" style="--h:90%"></div>
+            <div class="chart-bar" style="--h:75%"></div>
+          </div>
+        </div>
+
+        <!-- Feature 4: Agent Builder -->
+        <div class="feature-card reveal" style="--delay:0.3s">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4l2.5 7.5H24l-6.5 4.5 2.5 7.5L14 19l-6 4.5 2.5-7.5L4 11.5h7.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Agent Builder</h3>
+          <p>Visual drag-and-drop environment to compose multi-step autonomous agents. Connect tools, APIs, and memory stores.</p>
+          <div class="feature-tag-list">
+            <span>No-code</span><span>Memory</span><span>Tools</span>
+          </div>
+        </div>
+
+        <!-- Feature 5: Enterprise Security -->
+        <div class="feature-card reveal" style="--delay:0.4s">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="8" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M10 8V6a4 4 0 018 0v2" stroke="currentColor" stroke-width="1.5"/><circle cx="14" cy="15" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Enterprise Security</h3>
+          <p>SOC 2 Type II, HIPAA, GDPR, and SSO out of the box. Your data never trains upstream models.</p>
+          <!-- Compliance badges -->
+          <div class="security-badges">
+            <span class="badge">SOC 2</span>
+            <span class="badge">HIPAA</span>
+            <span class="badge">GDPR</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ TESTIMONIALS SECTION - Customer reviews and testimonials ═══════════════ -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-container">
+      <!-- Section header -->
+      <div class="section-header">
+        <span class="section-tag">TESTIMONIALS</span>
+        <h2 class="section-title">Loved by builders<br /><em>worldwide</em></h2>
+      </div>
+      <!-- Testimonials grid -->
+      <div class="testimonials-grid">
+
+        <!-- Testimonial 1: Jamie Kim, CTO at DataLoom -->
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Nexus AI cut our LLM infrastructure costs by 60% in two weeks. The routing intelligence alone paid for the annual plan in the first month."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="--color:#00e5ff">JK</div>
+            <div>
+              <strong>Jamie Kim</strong>
+              <span>CTO at DataLoom</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2: Sasha Rivera, Lead AI Engineer at Arc (Highlighted card) -->
+        <div class="testi-card testi-card--highlight reveal" style="--delay:0.1s">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"We went from prototyping agents to production in 3 days. The Agent Builder is genuinely the most intuitive tool I've ever used for autonomous AI workflows."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="--color:#ffd700">SR</div>
+            <div>
+              <strong>Sasha Rivera</strong>
+              <span>Lead AI Engineer, Arc</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3: Marcus Patel, Staff Engineer at Retool -->
+        <div class="testi-card reveal" style="--delay:0.2s">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"The observability features changed how we debug. We can see exactly where latency spikes happen, which model misbehaves, and why — in real time."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="--color:#a78bfa">MP</div>
+            <div>
+              <strong>Marcus Patel</strong>
+              <span>Staff Engineer at Retool</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4: Anika Larson, Head of Sales at Synthex -->
+        <div class="testi-card reveal" style="--delay:0.3s">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"SOC 2 compliance was the blocker for our enterprise deals. Nexus AI arrived with it built in. Closed three six-figure contracts the following month."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="--color:#34d399">AL</div>
+            <div>
+              <strong>Anika Larson</strong>
+              <span>Head of Sales, Synthex</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5: Tyler Chen, Co-Founder at Weave -->
+        <div class="testi-card reveal" style="--delay:0.4s">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"My non-technical co-founder shipped his first AI workflow in an afternoon using the no-code Agent Builder. Nexus democratizes what used to take a team."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="--color:#f97316">TC</div>
+            <div>
+              <strong>Tyler Chen</strong>
+              <span>Co-Founder at Weave</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 6: Nadia Blanc, Principal PM at Vercel -->
+        <div class="testi-card reveal" style="--delay:0.5s">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Nexus is the missing infrastructure layer for serious AI products. It's what every team is independently building — now you don't have to."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="--color:#e879f9">NB</div>
+            <div>
+              <strong>Nadia Blanc</strong>
+              <span>Principal PM, Vercel</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PRICING SECTION - Three-tier pricing with monthly/annual toggle ═══════════════ -->
+  <section class="pricing" id="pricing">
+    <div class="section-container">
+      <!-- Section header -->
+      <div class="section-header">
+        <span class="section-tag">PRICING</span>
+        <h2 class="section-title">Simple, transparent<br /><em>pricing</em></h2>
+        <p class="section-desc">No hidden fees. No usage surprises. Start free and scale as you grow.</p>
+      </div>
+      <!-- Billing toggle: Monthly vs Annual (30% savings) -->
+      <div class="pricing-toggle-wrap">
+        <span class="toggle-label">Monthly</span>
+        <label class="billing-toggle">
+          <input type="checkbox" id="billingToggle" />
+          <span class="billing-track"><span class="billing-thumb"></span></span>
+        </label>
+        <span class="toggle-label">Annual <span class="save-badge">Save 30%</span></span>
+      </div>
+      <!-- Pricing cards grid -->
+      <div class="pricing-grid">
+
+        <!-- Plan 1: Starter (Free tier) -->
+        <div class="pricing-card reveal">
+          <div class="plan-header">
+            <span class="plan-icon">🌱</span>
+            <h3 class="plan-name">Starter</h3>
+            <p class="plan-desc">Perfect for indie hackers and small teams exploring AI.</p>
+          </div>
+          <div class="plan-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-monthly="0" data-annual="0">0</span>
+            <span class="price-period">/mo</span>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> 100k tokens / month</li>
+            <li><span class="check">✓</span> 2 AI models</li>
+            <li><span class="check">✓</span> Basic observability</li>
+            <li><span class="check">✓</span> 1 Agent workflow</li>
+            <li><span class="cross">✗</span> SSO / SAML</li>
+            <li><span class="cross">✗</span> Priority support</li>
+          </ul>
+          <a href="#" class="btn btn-outline plan-btn">Get Started Free</a>
+        </div>
+
+        <!-- Plan 2: Pro ($79/mo - Featured/Most Popular) -->
+        <div class="pricing-card pricing-card--featured reveal" style="--delay:0.15s">
+          <div class="popular-badge">Most Popular</div>
+          <div class="plan-header">
+            <span class="plan-icon">⚡</span>
+            <h3 class="plan-name">Pro</h3>
+            <p class="plan-desc">For growing teams shipping serious AI products.</p>
+          </div>
+          <div class="plan-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-monthly="79" data-annual="55">79</span>
+            <span class="price-period">/mo</span>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> 5M tokens / month</li>
+            <li><span class="check">✓</span> All AI models</li>
+            <li><span class="check">✓</span> Full observability suite</li>
+            <li><span class="check">✓</span> Unlimited agents</li>
+            <li><span class="check">✓</span> Priority support</li>
+            <li><span class="cross">✗</span> SSO / SAML</li>
+          </ul>
+          <a href="#" class="btn btn-primary plan-btn">Start 14-Day Trial</a>
+        </div>
+
+        <!-- Plan 3: Enterprise (Custom pricing) -->
+        <div class="pricing-card reveal" style="--delay:0.3s">
+          <div class="plan-header">
+            <span class="plan-icon">🏢</span>
+            <h3 class="plan-name">Enterprise</h3>
+            <p class="plan-desc">Custom contracts, SLAs, and dedicated infra for scale.</p>
+          </div>
+          <div class="plan-price">
+            <span class="price-amount" style="font-size:2.2rem">Custom</span>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> Unlimited tokens</li>
+            <li><span class="check">✓</span> All AI models + fine-tunes</li>
+            <li><span class="check">✓</span> Dedicated infrastructure</li>
+            <li><span class="check">✓</span> SOC 2, HIPAA, GDPR</li>
+            <li><span class="check">✓</span> SSO / SAML</li>
+            <li><span class="check">✓</span> 24/7 SLA support</li>
+          </ul>
+          <a href="#cta" class="btn btn-outline plan-btn">Talk to Sales</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CTA SECTION - Final call-to-action with gradient background ═══════════════ -->
+  <section class="cta-section" id="cta">
+    <!-- Animated background orbs -->
+    <div class="cta-bg">
+      <div class="cta-orb cta-orb-1"></div>
+      <div class="cta-orb cta-orb-2"></div>
+    </div>
+    <div class="section-container">
+      <div class="cta-box reveal">
+        <span class="section-tag">GET STARTED</span>
+        <h2 class="cta-title">Ready to build the<br /><span class="title-gradient">future of AI?</span></h2>
+        <p class="cta-desc">Join 50,000+ teams already shipping smarter AI products with Nexus. No credit card required for the free plan.</p>
+        <!-- CTA action buttons -->
+        <div class="cta-actions">
+          <a href="#" class="btn btn-primary btn-lg">
+            <span>Start Building — It's free</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M11 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="btn btn-ghost btn-lg">Schedule a Demo</a>
+        </div>
+        <p class="cta-note">14-day free trial · No credit card · Cancel anytime</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER - Site links, social media, legal info ═══════════════ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Footer brand section -->
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <span class="logo-icon">⬡</span>
+          <span class="logo-text">NEXUS<span class="logo-accent">AI</span></span>
+        </a>
+        <p>The operating system for AI teams. Orchestrate. Observe. Ship.</p>
+        <!-- Social media links -->
+        <div class="social-links">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="GitHub">⌥</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Discord">◈</a>
+        </div>
+      </div>
+      <!-- Footer link columns -->
+      <div class="footer-links">
+        <!-- Product column -->
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+          <a href="#">Changelog</a>
+          <a href="#">Roadmap</a>
+        </div>
+        <!-- Developers column -->
+        <div class="footer-col">
+          <h4>Developers</h4>
+          <a href="#">Documentation</a>
+          <a href="#">API Reference</a>
+          <a href="#">SDKs</a>
+          <a href="#">Status</a>
+        </div>
+        <!-- Company column -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+    <!-- Footer bottom: Copyright and legal links -->
+    <div class="footer-bottom">
+      <p>© 2025 NexusAI, Inc. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+<!--connecting javascript-->
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- All names, text, and content used in this project are fictional and created for demonstration purposes only. The design and ideas were inspired by various online sources, including real websites and publicly available materials. Some elements were also generated with the assistance of AI tools. -->

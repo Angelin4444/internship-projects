@@ -1,0 +1,63 @@
+<!--
+Contact Form HTML
+Description: A contact form with glass morphism effect and validation
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character encoding and responsive viewport -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Page title -->
+  <title>Task2|Contact Form</title>
+  <!-- Link to external stylesheet for styling -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Container for the form with centered alignment -->
+  <div class="container">
+    <!-- Glass morphism contact form with validation -->
+    <form id="contactForm" class="glass-form" novalidate>
+      <!-- Form header -->
+      <h2>Contact Us</h2>
+
+      <!-- Full name input group -->
+      <div class="input-group">
+        <label>Full Name</label>
+        <input type="text" id="fullName" placeholder="Enter your full name">
+        <small class="error"></small>
+      </div>
+
+      <!-- Email input group -->
+      <div class="input-group">
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        <small class="error"></small>
+      </div>
+
+      <!-- Subject input group -->
+      <div class="input-group">
+        <label>Subject</label>
+        <input type="text" id="subject" placeholder="Enter subject">
+        <small class="error"></small>
+      </div>
+
+      <!-- Message text area group -->
+      <div class="input-group">
+        <label>Message</label>
+        <textarea id="message" rows="4" placeholder="Write your message"></textarea>
+        <small class="error"></small>
+      </div>
+
+      <!-- Submit button for form submission -->
+      <button type="submit" class="submit-btn">Send Message</button>
+      <!-- Success message display area -->
+      <p id="successMessage" class="success"></p>
+    </form>
+  </div>
+
+  <!-- Link to JavaScript file for form validation -->
+  <script src="script.js"></script>
+</body>
+</html>

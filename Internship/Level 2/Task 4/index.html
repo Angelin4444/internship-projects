@@ -1,0 +1,163 @@
+<!--
+Color Palette: Deep teal, midnight blue, rich burgundy featured cards
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character encoding and responsive viewport -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Page title -->
+  <title>AngelBlogzz</title>
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <h2 class="logo">AngelBlogzz</h2>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#posts">Posts</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="themeToggle" class="theme-btn">🌙</button>
+  </nav>
+
+  <!-- Hero Section with gradient background -->
+  <header id="home" class="hero">
+    <div class="hero-content">
+      <h1>Welcome to AngelBlogzz</h1>
+      <p>Tech • Lifestyle • Food • Drawing • Travel</p>
+      <button class="cta-btn">Explore Now</button>
+    </div>
+  </header>
+
+  <!-- Search and Filter Controls -->
+  <section class="controls">
+    <input type="text" id="searchInput" placeholder="Search posts...">
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+      <option value="tech">Tech</option>
+      <option value="lifestyle">Lifestyle</option>
+      <option value="food">Food</option>
+      <option value="drawing">Drawing</option>
+      <option value="travel">Travel</option>
+    </select>
+  </section>
+
+  <!-- Blog Posts Grid -->
+  <section id="posts" class="blog-container">
+    
+    <!-- POST 1: Tech -->
+    <div class="card" data-category="tech">
+      <img src="Assets/img1.jpg" alt="AI Technology">
+      <div class="card-content">
+        <h3 class="title">Future of AI</h3>
+        <p>Exploring the next generation of artificial intelligence and how it will change technology.</p>
+        <p class="meta">Tech | March 2026</p>
+      </div>
+    </div>
+
+    <!-- POST 2: Food -->
+    <div class="card" data-category="food">
+      <img src="Assets/img2.jpg" alt="Healthy Food">
+      <div class="card-content">
+        <h3 class="title">Healthy Food Ideas</h3>
+        <p>Discover simple and healthy meals that you can cook quickly at home.</p>
+        <p class="meta">Food | February 2026</p>
+      </div>
+    </div>
+
+    <!-- POST 3: Travel -->
+    <div class="card" data-category="travel">
+      <img src="Assets/img4.jpg" alt="Dubai Travel">
+      <div class="card-content">
+        <h3 class="title">Traveling Dubai</h3>
+        <p>Top attractions and beautiful places you must visit in Dubai.</p>
+        <p class="meta">Travel | January 2026</p>
+      </div>
+    </div>
+
+    <!-- POST 4: Drawing -->
+    <div class="card" data-category="drawing">
+      <img src="Assets/img3.jpg" alt="Drawing Art">
+      <div class="card-content">
+        <h3 class="title">Sketching Basics</h3>
+        <p>Learn the fundamentals of drawing and start creating your own sketches.</p>
+        <p class="meta">Drawing | January 2026</p>
+      </div>
+    </div>
+
+    <!-- POST 5: Lifestyle -->
+    <div class="card" data-category="lifestyle">
+      <img src="Assets/img5.jpg" alt="Lifestyle Tips">
+      <div class="card-content">
+        <h3 class="title">Daily Lifestyle Tips</h3>
+        <p>Improve your daily routine with these simple lifestyle habits.</p>
+        <p class="meta">Lifestyle | February 2026</p>
+      </div>
+    </div>
+
+    <!-- POST 6: Tech -->
+    <div class="card" data-category="tech">
+      <img src="Assets/img6.jpg" alt="Tech Gadgets">
+      <div class="card-content">
+        <h3 class="title">Latest Tech Gadgets</h3>
+        <p>Check out the newest gadgets and innovations in technology.</p>
+        <p class="meta">Tech | March 2026</p>
+      </div>
+    </div>
+
+    <!-- POST 7: Food -->
+    <div class="card" data-category="food">
+      <img src="Assets/img7.jpg" alt="Street Food">
+      <div class="card-content">
+        <h3 class="title">Street Food Around the World</h3>
+        <p>Explore some of the best street food dishes from different countries.</p>
+        <p class="meta">Food | January 2026</p>
+      </div>
+    </div>
+
+    <!-- POST 8: Travel -->
+    <div class="card" data-category="travel">
+      <img src="Assets/img8.png" alt="Mountain Travel">
+      <div class="card-content">
+        <h3 class="title">Mountain Adventures</h3>
+        <p>Experience the thrill of mountain traveling and outdoor adventures.</p>
+        <p class="meta">Travel | February 2026</p>
+      </div>
+    </div>
+
+    <!-- POST 9: Drawing -->
+    <div class="card" data-category="drawing">
+      <img src="Assets/img9.jpg" alt="Advanced Drawing">
+      <div class="card-content">
+        <h3 class="title">Advanced Drawing Techniques</h3>
+        <p>Improve shading, depth, and artistic techniques in your sketches.</p>
+        <p class="meta">Drawing | March 2026</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Pagination Controls -->
+  <div class="pagination">
+    <button id="prevBtn">Prev</button>
+    <span id="pageNum"></span>
+    <button id="nextBtn">Next</button>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTop">↑</button>
+
+  <!-- Footer Section -->
+  <footer id="contact">
+    <p>© 2026 AngelBlogzz. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for interactivity -->
+  <script src="script.js"></script>
+</body>
+</html>
