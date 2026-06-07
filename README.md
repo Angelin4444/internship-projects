@@ -5,7 +5,7 @@ This repository contains the projects I completed during my web development inte
 ## Technologies Used
 
 * HTML5
-* CSS3
+* CSS3 
 * JavaScript
 
 ## Projects
