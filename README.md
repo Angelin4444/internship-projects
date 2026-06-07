@@ -18,11 +18,18 @@ This repository contains the projects I completed during my web development inte
 
    <img width="1856" height="878" alt="image" src="https://github.com/user-attachments/assets/c6ecbfc9-e383-4c5c-9206-5aaf76acc8cf" />
 
-5. Project 3
+3. Project 3
 
-   
-6. Project 4
-   
-8. Project 5
+   <img width="1920" height="1080" alt="Untitled design (2)" src="https://github.com/user-attachments/assets/5151e65b-2504-42f9-a420-a3a408442a06" />
+
+4. Project 4
+
+   <img width="1107" height="1080" alt="Untitled design (3)" src="https://github.com/user-attachments/assets/fcf67871-c240-4257-b685-12574f7c0731" />
+
+   <img width="1173" height="1080" alt="Untitled design (1)" src="https://github.com/user-attachments/assets/6fb3b2dc-a6bb-4380-986c-c13242cf2fbd" />
+
+5. Project 5
+
+   <img width="1920" height="1080" alt="Untitled design (4)" src="https://github.com/user-attachments/assets/a0c7a280-cf5f-4015-8b57-b3617fb5c32d" />
 
 These projects helped me develop my frontend development skills, including website structure, styling, responsiveness, and interactive functionality.
